@@ -3,12 +3,13 @@
     <!-- Header -->
     <Header  @search="result" />
     <!-- main -->
-    <ContentFilm />
+    <ContentFilm :filmList="ContentFilm" />
   
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import Header from '@/components/Header.vue'
 import ContentFilm from '@/components/ContentFilm.vue'
 
@@ -21,18 +22,51 @@ export default {
   },
   data() {
     return {
-      filmList: null,
+      ContentFilm: null,
       searchFilm: '',
+      language: 'it-IT'
     }
   },
+   
+   /*  created() {
+     this.getCreateFilmList();
+
+   },  */
 
   methods: {
-    result(el) {
-      this.searchFilm = el;
-    }
-  }
 
+       getCreateFilmList() {
+
+        if (this.searchFilm != '') {
+
+      axios.get('https://api.themoviedb.org/3/search/movie', {
+      params: {
+        api_key: '7c559330d97194d2440c38cc8c64c805',
+        query: this.searchFilm,
+        language: this.language,
+      },
+
+      })
+
+      .then(result => {
+        this.ContentFilm = result.data.results;
+      })
+      .catch(error =>{
+        console.log(error);
+        }) 
+
+       } else {
+         this.ContentFilm = null;
+       }
+    },
+    result(text) {
+      this.searchFilm = text;
+      this.getCreateFilmList()
+    },
+  },
 }
+
+
 </script>
 
 <style lang="scss"></style>
