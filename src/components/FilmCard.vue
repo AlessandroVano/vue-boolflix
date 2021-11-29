@@ -6,7 +6,7 @@
            <img :src="require(`../assets/${language}.png`)" alt="">
          </li>
          <li v-else> {{language}} </li>
-         <li>{{vote}}</li>
+         <li> Voto: {{vote}}</li>
    </ul>
 </template>
 
@@ -39,7 +39,11 @@ computed: {
 </script>
 
 <style  scoped lang="scss">
+@import '@/styles/globals';
  img {
      width: 30px;
+ }
+ li {
+     color: $title-color;
  }
 </style>

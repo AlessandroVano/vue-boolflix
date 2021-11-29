@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" >
+    <section>
     <!-- Header -->
     <Header  @search="result" />
     <!-- main -->
     <ContentFilm :filmList="ContentFilm" />
-  
+    </section>
   </div>
 </template>
 
@@ -28,11 +29,6 @@ export default {
     }
   },
    
-   /*  created() {
-     this.getCreateFilmList();
-
-   },  */
-
   methods: {
 
        getCreateFilmList() {
@@ -69,4 +65,10 @@ export default {
 
 </script>
 
-<style lang="scss"></style>
+<style scoped lang="scss">
+@import '@/styles/globals';
+
+ section {
+   background-color: $bg-color ;
+ }
+</style>
