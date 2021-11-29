@@ -2,10 +2,10 @@
    <ul>
          <li>{{title}}</li>
          <li>{{originalTitle}}</li>
-         <!-- <li>{{language}}</li> -->
-         <li v-if="language === 'it' || language === 'en'">
+         <li v-if="arrFlags">
            <img :src="require(`../assets/${language}.png`)" alt="">
          </li>
+         <li v-else> {{language}} </li>
          <li>{{vote}}</li>
    </ul>
 </template>
@@ -22,11 +22,24 @@ props: {
 
 },
 
+data() {
+    return {
+        arrLanguage: ['en', 'it'],
+    }
+},
+
+computed: {
+    arrFlags() {
+        return this.arrLanguage.includes(this.language);
+    }
+}
 
 
 }
 </script>
 
-<style>
-
+<style  scoped lang="scss">
+ img {
+     width: 30px;
+ }
 </style>
