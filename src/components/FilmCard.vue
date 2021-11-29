@@ -2,7 +2,10 @@
    <ul>
          <li>{{title}}</li>
          <li>{{originalTitle}}</li>
-         <li>{{language}}</li>
+         <!-- <li>{{language}}</li> -->
+         <li v-if="language === 'it' || language === 'en'">
+           <img :src="require(`../assets/${language}.png`)" alt="">
+         </li>
          <li>{{vote}}</li>
    </ul>
 </template>
@@ -18,6 +21,8 @@ props: {
     vote: Number,
 
 },
+
+
 
 }
 </script>
