@@ -26,7 +26,6 @@ export default {
       ContentFilm: [],
       searchFilm: '',
       ContentSeries: [],
-
       language: 'it-IT'
     }
   },
