@@ -30,9 +30,13 @@
       
 
      <div class="reserch">
-      <input type="text" class="mt-2 "
-       placeholder="Che film vuoi ricercare?"
-       v-model.trim="searchFilm">
+      <input 
+      type="text" 
+      class="mt-2 "
+      placeholder="Che film vuoi ricercare?"
+      v-model.trim="searchFilm"
+      @keyup.enter="$emit('search', searchFilm)"
+      >
        <button class="b"
          @click="$emit('search', searchFilm)"
        >
@@ -56,7 +60,9 @@ export default {
    return {
      searchFilm: '',
    }
- }
+ },
+
+
 }
 </script>
 

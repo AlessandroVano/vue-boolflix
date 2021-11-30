@@ -1,14 +1,22 @@
 <template>
   <section class="container">
       <div class="mt-5" 
-      v-for="(film, index) in filmList" :key="`filmList${index}`"
+    
       >
 
          <FilmCard 
+           v-for="(film, index) in filmList" :key="`filmList${index}`"
          :title=" film.title"
          :originalTitle=" film.original_title"
          :language=" film.original_language"
          :vote=" film.vote_average"
+         />
+           <FilmCard 
+             v-for="(serie, index) in seriesList" :key="`seriesList${index}`"
+         :title=" serie.name"
+         :originalTitle=" serie.original_name"
+         :language=" serie.original_language"
+         :vote=" serie.vote_average"
          />
 
       </div>
@@ -26,7 +34,8 @@ components: {
 },
 
 props: {
-    filmList: Array
+    filmList: Array,
+    seriesList: Array
 }
 
 };
