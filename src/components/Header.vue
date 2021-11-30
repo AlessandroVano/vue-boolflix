@@ -87,7 +87,7 @@ a{
     color: $text-color;
     &.active,
     &:hover {
-        color: $title-color;
+        color: $color-red ;
         transition: color .4s;
     }
 }
@@ -99,25 +99,35 @@ a{
     border: 0;
     color: $title-color;
      background: $bg-color; 
-    border-bottom: 1px solid  rgba(255, 248, 248, 0.603); 
+     border-bottom: 1px solid  rgba(255, 248, 248, 0.603);  
     outline: none;
-    transition: border .3s;
+     transition: border .3s; 
+       &.active,
+    &:hover {
+        color: $color-red ;
+        transition: color .4s;
+    }
 } 
+
+    input:hover,
+    input:focus {
+    border-color: $color-red ;
+}
 .b {
 
  padding: 3px 28px;
 text-transform: uppercase;
 font-size: 14px;
-background-color: #e10000;
+background-color: $color-red ;
 border: 0;
 border-radius: 30px;
 }
 
 .b:hover,
 .b:focus{
-  transition: background .4s;
+  transition: background .6s;
     background:  rgb(65, 63, 63);
-    color: $title-color ;
+    color:  $color-red ;
 }
 
 
