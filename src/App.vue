@@ -1,7 +1,7 @@
 <template>
   <div id="app" >
-    <section>
     <!-- Header -->
+    <section>
     <Header  @search="result" />
     <!-- main -->
     <ContentFilm 
@@ -75,6 +75,6 @@ export default {
 @import '@/styles/globals';
 
   section {
-   background-color: $bg-color ;
+      background-color: $text-color;
  } 
 </style>

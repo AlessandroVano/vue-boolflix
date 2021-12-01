@@ -1,9 +1,6 @@
 <template>
   <section class="container">
-      <div class="mt-5" 
-    
-      >
-
+      <div class=" d-flex boxes" >
          <FilmCard 
            v-for="(film, index) in filmList" :key="`filmList${index}`"
            :img="film.poster_path"
@@ -45,6 +42,11 @@ props: {
 };
 </script>
 
-<style>
-
+<style  scoped lang="scss">
+ .boxes {
+   display: flex;
+   flex-wrap: wrap ;
+   justify-content: center;
+   margin-top: 100px;
+ }
 </style>

@@ -69,8 +69,8 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/globals';
 .bg {
-   background-color: $bg-color; 
-  margin-bottom: 80px;
+    background-color: $bg-color;
+    margin-bottom: -45px;
 }
 .container {
   justify-content: space-between;
@@ -90,7 +90,7 @@ a{
    display: inline-block;
     padding-left: 20px;
     text-decoration: none;
-    color: $text-color;
+    color: grey;
     &.active,
     &:hover {
         color: $color-red ;
