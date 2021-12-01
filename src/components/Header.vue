@@ -3,7 +3,7 @@
     <div class="container p-4 d-flex ">
       <div class="d-flex">
         <a href="#">
-         <img class="logo" src="../assets/Logonetflix.png" alt="">
+         <img class="logo" src="../assets/boolflix.png" alt="">
         </a>
 
        <ul class="d-flex">
@@ -37,11 +37,11 @@
       v-model.trim="searchFilm"
       @keyup.enter="$emit('search', searchFilm)"
       >
-       <button class="b"
+      <!--  <button class="b"
          @click="$emit('search', searchFilm)"
        >
         Vai
-        </button>
+        </button> -->
      </div>
       
 
@@ -69,7 +69,7 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/globals';
 .bg {
-  background-color: $bg-color;
+   background-color: $bg-color; 
   margin-bottom: 80px;
 }
 .container {

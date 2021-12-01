@@ -2,18 +2,22 @@
    <ul>
          <li> 
              <!-- inserimento immagine -->
-            <img class="poster" v-if="img !== null" :src="`https://image.tmdb.org/t/p/w342${img}`" alt="">
+            <img class="poster" v-if="img" :src="`https://image.tmdb.org/t/p/w342${img}`" alt="">
             <!-- se non trova l'immagine mostro questa -->
             <img class="no_found_poster" v-else src="../assets/progetta-poster-glitched-tipografico-vettore-clipart_csp40896763.webp" alt="">
          </li>
-         
          <li>{{title}}</li>
          <li>{{originalTitle}}</li>
          <li v-if="arrFlags">
            <img class="flag" :src="require(`../assets/${language}.png`)" alt="">
          </li>
          <li v-else> {{language}} </li>
-         <li> Voto: {{vote}}</li>
+
+         <li>
+             <i v-for="(vote, i) in Math.ceil(vote/2)" :key="i" class="fas fa-star"></i>
+             <i v-for="(vote, i) in 5 - Math.ceil(vote/2)" :key="i" class="far fa-star"></i>
+         </li>
+         
    </ul>
 </template>
 

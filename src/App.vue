@@ -74,7 +74,7 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/globals';
 
- section {
+  section {
    background-color: $bg-color ;
- }
+ } 
 </style>
