@@ -1,24 +1,33 @@
 <template>
-   <ul>
+   <div class="section-card">
+           
+     <ul>
+       <div>
          <li> 
              <!-- inserimento immagine -->
             <img class="poster" v-if="img" :src="`https://image.tmdb.org/t/p/w342${img}`" alt="">
             <!-- se non trova l'immagine mostro questa -->
             <img class="no_found_poster" v-else src="../assets/progetta-poster-glitched-tipografico-vettore-clipart_csp40896763.webp" alt="">
          </li>
+       </div>
+
          <li>{{title}}</li>
          <li>{{originalTitle}}</li>
+         <li> testo: {{text}} </li>
          <li v-if="arrFlags">
            <img class="flag" :src="require(`../assets/${language}.png`)" alt="">
          </li>
          <li v-else> {{language}} </li>
 
-         <li>
+         <li> 
+             Voto:
              <i v-for="(vote, i) in Math.ceil(vote/2)" :key="i" class="fas fa-star"></i>
              <i v-for="(vote, i) in 5 - Math.ceil(vote/2)" :key="i" class="far fa-star"></i>
          </li>
          
-   </ul>
+     </ul>
+
+        </div>
 </template>
 
 <script>
@@ -31,6 +40,9 @@ props: {
     language: String,
     vote: Number,
     img: String,
+    text: String
+
+
 },
 
 data() {
@@ -66,4 +78,9 @@ computed: {
      color: $title-color;
      list-style: none;
  }
+ .section-card {
+     display: flex;
+
+ }
+
 </style>
