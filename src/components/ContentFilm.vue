@@ -1,6 +1,7 @@
 <template>
   <section class="container">
-      <div class=" d-flex boxes" >
+  
+      <div class="boxes" >
          <FilmCard 
            v-for="(film, index) in filmList" :key="`filmList${index}`"
            :img="film.poster_path"
@@ -21,6 +22,7 @@
          />
 
       </div>
+     
   </section>
 </template>
 
@@ -43,6 +45,11 @@ props: {
 </script>
 
 <style  scoped lang="scss">
+@import '@/styles/globals';
+
+section {
+   background-color: $text-color;
+}
  .boxes {
    display: flex;
    flex-wrap: wrap ;

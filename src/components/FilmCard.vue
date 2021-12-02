@@ -6,20 +6,27 @@
             <img class="no_found_poster" v-else src="../assets/progetta-poster-glitched-tipografico-vettore-clipart_csp40896763.webp" alt="">
 
        <ul>
-          <li>{{title}}</li>
-          <li>{{originalTitle}}</li>
-          <li> testo: {{text}} </li>
-          <li v-if="arrFlags">
-            <img class="flag" :src="require(`../assets/${language}.png`)" alt="">
+          <li>
+               <h3>{{title}}</h3>
           </li>
-          <li v-else> {{language}} 
-
+          <li>
+              <h4>{{originalTitle}}</h4>
+          </li>
+          <li>
+              <h5>testo:</h5> 
+               <p>{{text}}</p>
+          </li>
+          <li v-if="arrFlags">
+               <img class="flag" :src="require(`../assets/${language}.png`)" alt="">
+          </li>
+          <li
+               v-else> {{language}} 
           </li>
 
           <li> 
              Voto:
              <i v-for="(vote, i) in Math.ceil(vote/2)" :key="i" class="fas fa-star"></i>
-             <i v-for="(vote, i) in 5 - Math.ceil(vote/2)" :key="i" class="far fa-star"></i>
+             <i v-for="(vote, index) in 5 - Math.ceil(vote/2)" :key="index" class="far fa-star"></i> 
          </li>
        </ul>
    </div>
@@ -52,7 +59,6 @@ computed: {
     }
 }
 
-
 }
 </script>
 
@@ -62,8 +68,6 @@ computed: {
  .flag {
      width: 30px;
  }
- 
- 
  .no_found_poster{
    width: 342px;
  }
@@ -74,6 +78,7 @@ computed: {
      font-size: 12px;
  }
  .section-card {
+     height: 100%;
      position: relative;
      margin-left: 20px;
      margin-bottom: 20px;
@@ -85,20 +90,41 @@ computed: {
          opacity: 100;
      }
      &:hover .poster {
-           filter:  blur(2.8px)  brightness(0.2) grayscale(0.38);
-           
+           filter:  blur(2.8px)  brightness(0.2) grayscale(0.38);    
      }
  }
+
 
  ul {
      position: absolute;
       opacity: 0; 
      top: 16px;
-     left: 40px;
+     left: 10px;
  }
  .section-card:hover ul {
      opacity: 1;
      cursor: pointer;
  }
 
+ h3 {
+     font-size: $form-h3;
+     margin-bottom: 5px;
+ }
+ h4 {
+     font-size: $form-h4;
+     margin-bottom: 5px;
+ }
+ h5 {
+     font-size: $form-h5;
+     margin-bottom: 20px;
+ }
+
+ p {
+     font-size: $form-p;
+ }
+ strong {
+     font-size: 14px ;
+ }
+
+ 
 </style>

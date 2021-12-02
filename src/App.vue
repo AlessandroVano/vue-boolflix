@@ -1,13 +1,11 @@
 <template>
-  <div id="app" >
+  <div id="app"  >
     <!-- Header -->
-    <section>
     <Header  @search="result" />
     <!-- main -->
     <ContentFilm 
     :filmList="ContentFilm"
     :seriesList="ContentSeries" />
-    </section>
   </div>
 </template>
 
@@ -64,6 +62,7 @@ export default {
     result(text) {
       this.searchFilm = text;
       this.getCreateFilmList()
+       this.searchFilm= '';
     },
   },
 }
@@ -74,7 +73,4 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/globals';
 
-  section {
-      background-color: $text-color;
- } 
 </style>
