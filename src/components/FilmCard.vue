@@ -13,20 +13,21 @@
               <h4>{{originalTitle}}</h4>
           </li>
           <li>
-              <h5>testo:</h5> 
+              <h5>Trama:</h5> 
                <p>{{text}}</p>
           </li>
-          <li v-if="arrFlags">
+          <li v-if="arrFlags" class="language">
+               <h5>Lingua:</h5>
                <img class="flag" :src="require(`../assets/${language}.png`)" alt="">
           </li>
-          <li
-               v-else> {{language}} 
+          <li v-else> 
+                {{language}} 
           </li>
 
-          <li> 
+          <li class="vote"> 
              Voto:
              <i v-for="(vote, i) in Math.ceil(vote/2)" :key="i" class="fas fa-star"></i>
-             <i v-for="(vote, index) in 5 - Math.ceil(vote/2)" :key="index" class="far fa-star"></i> 
+             <i v-for="(vote, i) in 5 - Math.ceil(vote/2)" :key="i" class="far fa-star"></i> 
          </li>
        </ul>
    </div>
@@ -66,7 +67,9 @@ computed: {
 @import '@/styles/globals';
 
  .flag {
-     width: 30px;
+     width: 40px;
+     height: 20px;
+     padding-left: 7px;
  }
  .no_found_poster{
    width: 342px;
@@ -84,7 +87,7 @@ computed: {
      margin-bottom: 20px;
      ul,
      .poster{
-          transition: all 0.6s;
+          transition: all 1s;
      }
      &:hover ul {
          opacity: 100;
@@ -112,11 +115,11 @@ computed: {
  }
  h4 {
      font-size: $form-h4;
-     margin-bottom: 5px;
+     margin-bottom: 10px;
  }
  h5 {
      font-size: $form-h5;
-     margin-bottom: 20px;
+     margin-bottom: 7px;
  }
 
  p {
@@ -124,6 +127,15 @@ computed: {
  }
  strong {
      font-size: 14px ;
+ }
+ .language {
+     display: flex;
+    margin-top: 12px;
+ }
+ .vote {
+     text-align: center;
+     font-size: 20px;
+     padding-top: 5px;
  }
 
  

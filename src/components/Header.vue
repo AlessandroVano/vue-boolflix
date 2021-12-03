@@ -1,5 +1,5 @@
 <template> 
-  <section class="bg">
+  <section class="bg fixed-top">
     <div class="container p-3 d-flex ">
       <div class="d-flex">
         <a href="#">
